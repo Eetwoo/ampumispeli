@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    [SerializeField] AudioClip aii;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -21,7 +24,9 @@ public class BulletScript : MonoBehaviour
         Debug.Log(collision.transform.name);
         if(collision.transform.tag == "Enemy")
         {
+            audioSource.PlayOneShot(aii);
             Destroy(collision.gameObject);
+
             gameObject.SetActive(false);
 
         }
