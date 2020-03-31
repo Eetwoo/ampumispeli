@@ -10,7 +10,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        
+
     }
 
     // Update is called once per frame
@@ -26,11 +26,15 @@ public class BulletScript : MonoBehaviour
         {
             audioSource.PlayOneShot(aii);
             Destroy(collision.gameObject);
-
-            gameObject.SetActive(false);
+            Invoke("DespawnBullet", 2);
 
         }
 
-        
+
+    }
+
+    private void DespawnBullet()
+    {
+       gameObject.SetActive(false);
     }
 }
