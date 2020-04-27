@@ -23,16 +23,13 @@ public class BulletScript : MonoBehaviour
     {
         Debug.Log(collision.transform.name);
         DespawnBullet();
-            
-
-
-
-
+           
     }
 
     private void DespawnBullet()
     {
-       gameObject.SetActive(false);
+        Destroy(gameObject);
+        
         
     }
 }

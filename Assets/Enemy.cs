@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.transform.name);
         if (collision.transform.tag == "Bullet")
         {
             audioSource.PlayOneShot(aii);
@@ -33,4 +32,5 @@ public class Enemy : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
 }
