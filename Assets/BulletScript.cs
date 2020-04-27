@@ -22,13 +22,10 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.transform.name);
-        if(collision.transform.tag == "Enemy")
-        {
-            audioSource.PlayOneShot(aii);
-            Destroy(collision.gameObject);
-            Invoke("DespawnBullet", 2);
+        DespawnBullet();
+            
 
-        }
+
 
 
     }
@@ -36,5 +33,6 @@ public class BulletScript : MonoBehaviour
     private void DespawnBullet()
     {
        gameObject.SetActive(false);
+        
     }
 }

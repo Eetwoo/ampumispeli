@@ -1,20 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-   /* Vector3 startingPos;
-    float speed = 2f;
-    // Start is called before the first frame update
+    int hp = 100;
+    [SerializeField] AudioClip aii;
+    AudioSource audioSource;
     void Start()
     {
-        startingPos = transform.position;
+        audioSource = GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        transform.position = startingPos + speed;
-    }*/
+        Debug.Log(collision.transform.name);
+        if (collision.transform.tag == "Bullet")
+        {
+            audioSource.PlayOneShot(aii);
+
+            hp = hp - 50;
+            if(hp <= 0)
+            {
+                Invoke("DespawnEnemy", 2);
+            }
+        }
+    }
+
+    private void DespawnEnemy()
+    {
+        gameObject.SetActive(false);
+    }
 }
