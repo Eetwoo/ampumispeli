@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
 
     private void DespawnEnemy()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
 }
