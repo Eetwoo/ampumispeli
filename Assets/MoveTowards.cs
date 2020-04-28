@@ -14,7 +14,7 @@ public class MoveTowards : MonoBehaviour
         // Moves the object to target position
         transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
         _direction = (Target.position - transform.position).normalized;
-        _lookRotation = Quaternion.LookRotation(_direction);
+        _lookRotation = Quaternion.LookRotation(transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
     }
 }
