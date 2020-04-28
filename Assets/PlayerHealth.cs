@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    int playerHP = 200;
+    public int maxHealth = 200;
+    public int currentHealth;
+    public HealthBar healthBar;
     [SerializeField ]private float invincibilityDuration;
     [SerializeField] private float invincibilityDeltaTime;
     private bool IsInvincible = false;
@@ -14,7 +16,8 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -27,11 +30,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.transform.tag == "Enemy" && !IsInvincible)
         {
-            
-            playerHP = playerHP - 50;
-            Debug.Log(playerHP);
+
+            TakeDamage(50);
+            Debug.Log(currentHealth);
             StartCoroutine(BecomeTemporarilyInvicible());
-            if (playerHP <= 0)
+            if (currentHealth <= 0)
             {
                 initGameOver();
             }
@@ -59,6 +62,12 @@ public class PlayerHealth : MonoBehaviour
 
         IsInvincible = false;
         Debug.Log("no longer invincible");
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }
 
