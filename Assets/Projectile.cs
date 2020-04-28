@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
             Rigidbody clone;
             clone = (Rigidbody)Instantiate(projectile, Spawnpoint.position, projectile.rotation);
 
-            clone.velocity = Spawnpoint.TransformDirection(Vector3.forward * 50);
+            clone.velocity = Spawnpoint.TransformDirection(Vector3.forward * 25);
         }
     }
 }

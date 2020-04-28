@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
             if(currentHealth <= 0)
             {
                 healthBar.gameObject.SetActive(false);
-                Invoke("DespawnEnemy", 2);
+                Invoke("DespawnEnemy", 0.5f);
             }
         }
     }
