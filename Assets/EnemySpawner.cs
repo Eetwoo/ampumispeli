@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,23 +13,23 @@ public class EnemySpawner : MonoBehaviour
     int WaveNumber = 1;
     int NumberOfEnemies = 3;
     int enemiesByWave;
-    [SerializeField]int moreEnemiesByWave;
+    [SerializeField] int moreEnemiesByWave;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }                                                                   
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(NumberOfEnemies >= 0)
+        if (NumberOfEnemies >= 0)
         {
             SpawnEnemy();
         }
         else
         {
-            
+
             Invoke("ResetWave", 5f);
         }
 
@@ -45,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        if(Time.time >= canspawn)
+        if (Time.time >= canspawn)
         {
             randX = UnityEngine.Random.Range(30.0f, 40.0f);
             randY = UnityEngine.Random.Range(1.0f, 2.0f);

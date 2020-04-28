@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    int hp = 100;
+    int maxHealth = 99;
+    int currentHealth;
+    public HealthBar healthBar;
     [SerializeField] AudioClip aii;
     AudioSource audioSource;
     void Start()
     {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         audioSource = GetComponent<AudioSource>();
 
     }
@@ -19,12 +23,12 @@ public class Enemy : MonoBehaviour
         if (collision.transform.tag == "Bullet")
         {
             audioSource.PlayOneShot(aii);
-
-            hp = hp - 50;
-            if(hp <= 0)
+            TakeDamage(33);
+            
+            if(currentHealth <= 0)
             {
+                healthBar.gameObject.SetActive(false);
                 Invoke("DespawnEnemy", 2);
-                 
             }
         }
     }
@@ -38,4 +42,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-}
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+}   

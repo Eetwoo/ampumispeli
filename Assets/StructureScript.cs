@@ -9,10 +9,16 @@ public class StructureScript : MonoBehaviour
     [SerializeField] private float invincibilityDuration;
     [SerializeField] private float invincibilityDeltaTime;
     private bool IsInvincible = false;
-    int structureHP = 500;
+    
+    
+    public int maxHealth = 500;
+    public int currentHealth;
+    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
-    {
+    {       
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         
     }
 
@@ -22,17 +28,21 @@ public class StructureScript : MonoBehaviour
         
     }
 
+
+    
     private void OnCollisionStay(Collision collision)
     {
         if (collision.transform.tag == "Enemy" && !IsInvincible)
         {
-            structureHP = structureHP - 50;
-        StartCoroutine(BecomeTemporarilyInvicible());
-        Debug.Log(structureHP);
-        if (structureHP <= 0)
-        {
-            initGameOver();
-        }
+            TakeDamage(50);
+            StartCoroutine(BecomeTemporarilyInvicible());           
+            Debug.Log(currentHealth);               
+            
+            if (currentHealth <= 0)
+                
+                {
+                    initGameOver();
+                }
     }
 
 }
@@ -56,5 +66,11 @@ public class StructureScript : MonoBehaviour
 
         IsInvincible = false;
         Debug.Log("no longer invincible");
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }

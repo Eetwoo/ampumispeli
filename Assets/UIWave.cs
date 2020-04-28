@@ -15,6 +15,6 @@ public class UIWave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
