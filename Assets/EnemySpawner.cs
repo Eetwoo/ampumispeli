@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        NumberOfEnemies = 3;
     }
 
     // Update is called once per frame
@@ -26,11 +26,13 @@ public class EnemySpawner : MonoBehaviour
         if (NumberOfEnemies >= 0)
         {
             SpawnEnemy();
+            Debug.Log(NumberOfEnemies);
         }
         else
         {
 
-            Invoke("ResetWave", 5f);
+            ResetWave();
+            return;
         }
 
     }

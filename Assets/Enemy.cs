@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.transform.tag == "Bullet")
         {
-            audioSource.PlayOneShot(aii);
+            //audioSource.PlayOneShot(aii);
             TakeDamage(33);
             
             if(currentHealth <= 0)
