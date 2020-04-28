@@ -24,13 +24,18 @@ public class Enemy : MonoBehaviour
             if(hp <= 0)
             {
                 Invoke("DespawnEnemy", 2);
+                 
             }
         }
     }
 
     private void DespawnEnemy()
     {
-        Destroy(gameObject);
+        if (gameObject != null)
+        {
+            // Do something  
+            Destroy(gameObject);
+        }
     }
 
 }
