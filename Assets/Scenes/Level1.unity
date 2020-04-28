@@ -1736,6 +1736,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LumiukkoOBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 7006391268755731286, guid: 326ff79ed83b50848969df0089b62fd7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 326ff79ed83b50848969df0089b62fd7, type: 3}
 --- !u!1001 &1793779061
@@ -2236,6 +2241,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667180662945450781, guid: 60ecd3bf0aab80445a9938f3ef548b99,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4234972399168429358, guid: 60ecd3bf0aab80445a9938f3ef548b99,
         type: 3}
