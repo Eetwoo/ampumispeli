@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +6,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     int maxHealth = 99;
+    int dropPowerUp;
     int currentHealth;
     public HealthBar healthBar;
     [SerializeField] AudioClip aii;
     AudioSource audioSource;
+
+    public GameObject spawnPowerUp;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -28,6 +32,12 @@ public class Enemy : MonoBehaviour
             if(currentHealth <= 0)
             {
                 healthBar.gameObject.SetActive(false);
+                dropPowerUp = Random.Range(0,10);
+                Debug.Log("powerup: " + dropPowerUp);
+                if (dropPowerUp <= 2)
+                {
+                    Instantiate(spawnPowerUp, transform.position, transform.rotation);
+                } 
                 Invoke("DespawnEnemy", 0.5f);
             }
         }
@@ -37,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         if (gameObject != null)
         {
+
             // Do something  
             Destroy(gameObject);
         }

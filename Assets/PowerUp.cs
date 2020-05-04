@@ -19,8 +19,8 @@ public class PowerUp : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
         Debug.Log("powerup picked");
-        StructureScript stats = player.GetComponent<StructureScript>();
-        stats.currentHealth = stats.currentHealth + 100;
+        PlayerMovement stats = player.GetComponent<PlayerMovement>();
+        stats.speed *= 2;
         Destroy(gameObject);
     }
 }

@@ -1808,6 +1808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 4406139559071760507}
   aii: {fileID: 8300000, guid: a531e8ab877d77c4b84d542032fc6d0c, type: 3}
+  spawnPowerUp: {fileID: 7272318731713247082, guid: a5422449d9a17bd48812491fb27fabf2,
+    type: 3}
 --- !u!114 &4406139560712844546
 MonoBehaviour:
   m_ObjectHideFlags: 0

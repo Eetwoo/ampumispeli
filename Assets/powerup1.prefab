@@ -103,8 +103,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7272318731713247082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463763244487b40a282e1d7cb8b9d6ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b67737c2ddf114b8e5d63088ba6c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 1414200116521900077, guid: 01e06ee01753e453a845b3ccb4d2819c,
+  pickupEffect: {fileID: 1414200116521900077, guid: 1af0709394363e049a20fe08aeb564ad,
     type: 3}
