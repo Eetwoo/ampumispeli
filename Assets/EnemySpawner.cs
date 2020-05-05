@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject enemyPrefab1;
+    public GameObject flameejaPrefab;
+    public GameObject flameejaPrefab1;
     public GameObject WaveText;
     float delay = 10.0f;
     float canspawn = 5;
@@ -67,6 +69,7 @@ public class EnemySpawner : MonoBehaviour
                     randZ = UnityEngine.Random.Range(-5.0f, 8.0f);
 
                     enemyPrefab1 = Instantiate(enemyPrefab, new Vector3(randX, randY, randZ), transform.rotation) as GameObject;
+                    flameejaPrefab1 = Instantiate(flameejaPrefab, new Vector3(randX, randY, randZ), transform.rotation) as GameObject;
                     NumberOfEnemies = NumberOfEnemies - 1;
                 }
                 canspawn += delay;
@@ -80,6 +83,7 @@ public class EnemySpawner : MonoBehaviour
                     randZ = UnityEngine.Random.Range(-5.0f, 8.0f);
 
                     enemyPrefab1 = Instantiate(enemyPrefab, new Vector3(randX, randY, randZ), transform.rotation) as GameObject;
+                    flameejaPrefab1 = Instantiate(flameejaPrefab, new Vector3(randX, randY, randZ), transform.rotation) as GameObject;
                     NumberOfEnemies = NumberOfEnemies - 1;
                 }
                 canspawn += delay;
