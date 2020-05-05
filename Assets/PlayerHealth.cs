@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnCollisionStay(Collision collision)
@@ -64,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("no longer invincible");
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);

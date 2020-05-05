@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioClip aii;
     AudioSource audioSource;
 
-    public GameObject spawnPowerUp;
+    public GameObject healthPowerUp;
+    public GameObject speedPowerUp;
 
     void Start()
     {
@@ -32,12 +33,16 @@ public class Enemy : MonoBehaviour
             if(currentHealth <= 0)
             {
                 healthBar.gameObject.SetActive(false);
-                dropPowerUp = Random.Range(0,10);
+                dropPowerUp = Random.Range(0,20);
                 Debug.Log("powerup: " + dropPowerUp);
-                if (dropPowerUp <= 2)
+                if (dropPowerUp <= 1)
                 {
-                    Instantiate(spawnPowerUp, transform.position, transform.rotation);
-                } 
+                    Instantiate(healthPowerUp, transform.position, transform.rotation);
+                }
+                else if (dropPowerUp <= 2)
+                {
+                    Instantiate(speedPowerUp, transform.position, transform.rotation);
+                }
                 Invoke("DespawnEnemy", 0.5f);
             }
         }

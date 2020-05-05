@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +6,8 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     public GameObject pickupEffect;
+
+    public StructureScript linnahealth;
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,9 +20,19 @@ public class PowerUp : MonoBehaviour
     void Pickup(Collider player)
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
-        Debug.Log("powerup picked");
-        PlayerMovement stats = player.GetComponent<PlayerMovement>();
-        stats.speed *= 2;
+        if (gameObject.tag == "healthPowerUp")
+        {
+            //TODO linnaan healthia
+            PlayerHealth playeri = player.GetComponent<PlayerHealth>();
+            playeri.TakeDamage(-100);
+        }
+        else if (gameObject.tag == "speedPowerUp")
+        {
+            PlayerMovement stats = player.GetComponent<PlayerMovement>();
+            stats.speed *= 2;
+        }
         Destroy(gameObject);
     }
+
+
 }

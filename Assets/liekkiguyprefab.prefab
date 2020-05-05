@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2391912038970272455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.739, y: 0.02, z: -0.7}
+  m_LocalPosition: {x: 28.739, y: 0.3, z: -0.7}
   m_LocalScale: {x: 0.074585, y: 0.074585, z: 0.074585}
   m_Children:
   - {fileID: 4305859687342629357}
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac6d6da9e770be4faedaac36bd1c6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: -7, y: 1, z: 1}
+  target: {x: -1, y: 0, z: 0}
   speed: 5
   Target: {fileID: -4216859302048453862, guid: 309cc470acdfa444f90c9589b8be72c8, type: 3}
   RotationSpeed: 0
@@ -260,7 +260,9 @@ MonoBehaviour:
   maxHealth: 32
   healthBar: {fileID: 7239770431400521835}
   aii: {fileID: 8300000, guid: a531e8ab877d77c4b84d542032fc6d0c, type: 3}
-  spawnPowerUp: {fileID: 7272318731713247082, guid: a5422449d9a17bd48812491fb27fabf2,
+  healthPowerUp: {fileID: 577669064965119453, guid: 88f6b92fd699a446ea32460e3867bb05,
+    type: 3}
+  speedPowerUp: {fileID: 2847781657465484724, guid: c34c4dbf0aede413e8c672338863950c,
     type: 3}
 --- !u!1 &2723310055229356182
 GameObject:

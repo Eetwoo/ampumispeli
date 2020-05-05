@@ -1806,9 +1806,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a000e8e1885574899682c09382ce0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 155
   healthBar: {fileID: 4406139559071760507}
   aii: {fileID: 8300000, guid: a531e8ab877d77c4b84d542032fc6d0c, type: 3}
-  spawnPowerUp: {fileID: 7272318731713247082, guid: a5422449d9a17bd48812491fb27fabf2,
+  healthPowerUp: {fileID: 577669064965119453, guid: 88f6b92fd699a446ea32460e3867bb05,
+    type: 3}
+  speedPowerUp: {fileID: 2847781657465484724, guid: c34c4dbf0aede413e8c672338863950c,
     type: 3}
 --- !u!114 &4406139560712844546
 MonoBehaviour:
