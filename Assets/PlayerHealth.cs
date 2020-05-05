@@ -64,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("no longer invincible");
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
