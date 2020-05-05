@@ -1645,6 +1645,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7892476564854293357, guid: a6fb351c7073ee343a323491822f5cbf,
+        type: 3}
+      propertyPath: flameejaPrefab
+      value: 
+      objectReference: {fileID: 2391912038970272455, guid: d4d213b66dc367e489973b26cc420949,
+        type: 3}
     - target: {fileID: 7892476565496889969, guid: a6fb351c7073ee343a323491822f5cbf,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2000,8 +2006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f099bae5d90fb141a7c4aac3834ed87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincibilityDuration: 0
-  invincibilityDeltaTime: 0
+  invincibilityDuration: 3
+  invincibilityDeltaTime: 3
   maxHealth: 500
   currentHealth: 0
   healthBar: {fileID: 1068236562}
@@ -2022,8 +2028,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 86.24762, y: 98.15411, z: 114.949684}
+  m_Center: {x: -85.34417, y: 48.57705, z: 11.89731}
 --- !u!1 &986678093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,7 +2446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236499411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f099bae5d90fb141a7c4aac3834ed87, type: 3}
   m_Name: 
@@ -2459,7 +2465,7 @@ BoxCollider:
   m_GameObject: {fileID: 1236499411}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 86.48709, y: 56.573395, z: 86.48709}
   m_Center: {x: -1.8969439, y: 30.452297, z: 11.652549}
@@ -2703,6 +2709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LumiukkoOBJ
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006391268755731286, guid: 326ff79ed83b50848969df0089b62fd7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 326ff79ed83b50848969df0089b62fd7, type: 3}
