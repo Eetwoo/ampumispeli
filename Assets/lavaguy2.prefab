@@ -1823,7 +1823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: -1, y: 0, z: 0}
-  speed: 1
   speed: 2
   Target: {fileID: -4216859302048453862, guid: 309cc470acdfa444f90c9589b8be72c8, type: 3}
   RotationSpeed: 1
