@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class Enemy : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         audioSource = GetComponent<AudioSource>();
 
+    }
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(1))
+        {
+            DespawnEnemy();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

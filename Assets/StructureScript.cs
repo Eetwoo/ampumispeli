@@ -35,8 +35,7 @@ public class StructureScript : MonoBehaviour
         if (collision.transform.tag == "Enemy" && !IsInvincible)
         {
             TakeDamage(50);
-            StartCoroutine(BecomeTemporarilyInvicible());           
-            Debug.Log(currentHealth);               
+            StartCoroutine(BecomeTemporarilyInvicible());                     
             
             if (currentHealth <= 0)
                 
@@ -55,7 +54,6 @@ public class StructureScript : MonoBehaviour
 
     private IEnumerator BecomeTemporarilyInvicible()
     {
-        Debug.Log("invincible");
         IsInvincible = true;
 
         for (float i = 0; i < invincibilityDuration; i += invincibilityDeltaTime)
@@ -65,7 +63,6 @@ public class StructureScript : MonoBehaviour
 
 
         IsInvincible = false;
-        Debug.Log("no longer invincible");
     }
 
     void TakeDamage(int damage)

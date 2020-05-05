@@ -1645,6 +1645,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7892476564854293357, guid: a6fb351c7073ee343a323491822f5cbf,
+        type: 3}
+      propertyPath: flameejaPrefab
+      value: 
+      objectReference: {fileID: 2391912038970272455, guid: d4d213b66dc367e489973b26cc420949,
+        type: 3}
     - target: {fileID: 7892476565496889969, guid: a6fb351c7073ee343a323491822f5cbf,
         type: 3}
       propertyPath: m_LocalPosition.z
