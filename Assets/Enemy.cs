@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
                 {
                     Instantiate(speedPowerUp, transform.position, transform.rotation);
                 }
-                Invoke("DespawnEnemy", 0.5f);
+                Invoke("DespawnEnemy", 0.00000000000001f);
             }
         }
     }
