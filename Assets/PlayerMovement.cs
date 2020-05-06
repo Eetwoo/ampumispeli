@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (characterController.isGrounded)
+        if (characterController.isGrounded) 
         {
             // We are grounded, so recalculate
             // move direction directly from axes
@@ -33,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
-          /*  if (Input.GetButton("Jump"))
+            if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpSpeed;
-            }*/
+            }
 
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
