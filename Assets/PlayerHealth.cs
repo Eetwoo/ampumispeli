@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 200;
     public int currentHealth;
     public HealthBar healthBar;
-    [SerializeField ]private float invincibilityDuration;
+    [SerializeField] private float invincibilityDuration;
     [SerializeField] private float invincibilityDeltaTime;
     private bool IsInvincible = false;
 
@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionStay(Collision collision)
@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void initGameOver()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
 
     }
 
@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("invincible");
         IsInvincible = true;
 
-        for(float i = 0; i < invincibilityDuration; i+= invincibilityDeltaTime)
+        for (float i = 0; i < invincibilityDuration; i += invincibilityDeltaTime)
         {
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
@@ -67,6 +67,11 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
         healthBar.SetHealth(currentHealth);
     }
 }
