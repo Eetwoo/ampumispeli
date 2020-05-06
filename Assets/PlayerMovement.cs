@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (characterController.isGrounded) 
+        if (characterController.isGrounded)
         {
             // We are grounded, so recalculate
             // move direction directly from axes
@@ -45,7 +45,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
             }
-            
+
+        }
+
+        if (speed != 6.0f)
+        {
+            StartCoroutine(speedTimer());
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -56,4 +61,14 @@ public class PlayerMovement : MonoBehaviour
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
     }
+
+    public IEnumerator speedTimer()
+    {
+        Debug.Log("timer starts");
+        yield return new WaitForSeconds(10.0f);
+        Debug.Log("timer stops");
+        speed = 6.0f;
+        yield return null;
+    }
+
 }
