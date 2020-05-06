@@ -14,8 +14,9 @@ public class EnemySpawner : MonoBehaviour
     public GameObject flameejaPrefab1;
     public GameObject WaveText;
     float delay = 10.0f;
-    float canspawn = 5;
+    float timer2;
     float timer;
+    float timer3;
     public float randX, randY, randZ;
     int WaveNumber = 1;
     int NumberOfEnemies = 3;
@@ -29,6 +30,8 @@ public class EnemySpawner : MonoBehaviour
     {
         WaveText.GetComponent<Text>().text = "Wave: " + WaveNumber.ToString();
         timer = Time.time + delay;
+        timer2 = Time.time + delay + delay;
+        timer3 = Time.time + delay + delay + delay;
     }
 
     // Update is called once per frame
@@ -40,20 +43,11 @@ public class EnemySpawner : MonoBehaviour
             if (NumberOfEnemies >= 0)
             {
                 SpawnEnemy();
-                Debug.Log("Numberofenemies(if): " + NumberOfEnemies);
-                Debug.Log("wavenumber(if): " + WaveNumber);
-                Debug.Log("wavenumber(if): " + WaveNumber);
-                Debug.Log("timer(if): " + timer);
-                Debug.Log("Time.time(if): " + Time.time);
                 return;
             }
             else
             {
                 ResetWave();
-                Debug.Log("Numberofenemies(else): " + NumberOfEnemies);
-                Debug.Log("wavenumber(else): " + WaveNumber);
-                Debug.Log("timer(else): " + timer);
-                Debug.Log("Time.time(else): " + Time.time);
                 return;
             }
         }
@@ -72,43 +66,152 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-      //  if (Time.time >= canspawn)
-       // {
+        SpawnerRight();
+        SpawnerTop();
+        SpawnerLeft();
+    }
+
+    private void SpawnerLeft()
+    {
+        if (timer3 < Time.time && WaveNumber >= 8)
+        {
             if (WaveNumber <= maxEnemiesBySpawn)
             {
+
                 for (int i = 0; i < WaveNumber; i++)
                 {
-                    randX = UnityEngine.Random.Range(30.0f, 40.0f);
-                    randY = UnityEngine.Random.Range(1.0f, 2.0f);
-                    randZ = UnityEngine.Random.Range(-5.0f, 8.0f);
 
-                    enemyPrefab1 = Instantiate(enemyPrefab, new Vector3(randX, randY, randZ), transform.rotation) as GameObject;
-                    NumberOfEnemies = NumberOfEnemies - 1;
-                    flameejaPrefab1 = Instantiate(flameejaPrefab, new Vector3(randX +2, randY+2, randZ+2), transform.rotation) as GameObject;
-                    NumberOfEnemies = NumberOfEnemies - 1;
-                timer = Time.time + delay;
+                    RandomizeSpawn2(-18f, -35f, 26f, 0f);
+                    SpawnLavaguy();
+
+                    if (WaveNumber >= 8)
+                    {
+                        SpawnFlameGuy();
+                    }
+                    timer3 = Time.time + delay + delay + delay;
+                }
+
             }
-                
-            }
-            
+
             else
             {
                 for (int i = 0; i < maxEnemiesBySpawn; i++)
                 {
-                    randX = UnityEngine.Random.Range(30.0f, 40.0f);
-                    randY = UnityEngine.Random.Range(1.0f, 2.0f);
-                    randZ = UnityEngine.Random.Range(-5.0f, 8.0f);
+                    RandomizeSpawn2(-18f, -35f, 26f, 0f);
 
-                    enemyPrefab1 = Instantiate(enemyPrefab, new Vector3(randX, randY, randZ), transform.rotation) as GameObject;
-                NumberOfEnemies = NumberOfEnemies - 1;
-                flameejaPrefab1 = Instantiate(flameejaPrefab, new Vector3(randX + 2, randY + 2, randZ + 2), transform.rotation) as GameObject;
+                    SpawnLavaguy();
 
-                    NumberOfEnemies = NumberOfEnemies -1 ;
+                    if (WaveNumber >= 10)
+                    {
+                        SpawnFlameGuy();
+                    }
+                    timer3 = Time.time + delay + delay + delay;
+                }
+
+            }
+            return;
+        }
+    }
+
+    private void SpawnerTop()
+    {
+        if (timer2 < Time.time && WaveNumber >= 2)
+        {
+            if (WaveNumber <= maxEnemiesBySpawn)
+            {
+                for (int i = 0; i < WaveNumber; i++)
+                {
+                    RandomizeSpawn2(30f, -15f, 22f, 30f);
+                    SpawnLavaguy();
+
+                    if (WaveNumber >= 5)
+                    {
+                        SpawnFlameGuy();
+                    }
+                    timer2 = Time.time + delay + delay;
+                }
+
+            }
+
+            else
+            {
+                for (int i = 0; i < maxEnemiesBySpawn; i++)
+                {
+                    RandomizeSpawn2(30f, -15f, 22f, 30f);
+
+                    SpawnLavaguy();
+
+                    if (WaveNumber >= 3)
+                    {
+                        SpawnFlameGuy();
+                    }
+                    timer2 = Time.time + delay + delay;
+                }
+
+            }
+            return;
+        }
+    }
+    private void RandomizeSpawn2(float x1, float x2, float z1, float z2 )
+    {
+        randX = UnityEngine.Random.Range(x1, x2);
+        randY = UnityEngine.Random.Range(1.0f, 2.0f);
+        randZ = UnityEngine.Random.Range(z1, z2);
+    }
+
+    private void SpawnerRight()
+    {
+        if (WaveNumber <= maxEnemiesBySpawn)
+        {
+            for (int i = 0; i < WaveNumber; i++)
+            {
+                RandomizeSpawn();
+                SpawnLavaguy();
+
+                if (WaveNumber >= 3)
+                {
+                    SpawnFlameGuy();
+                }
                 timer = Time.time + delay;
             }
-               
+
+        }
+
+        else
+        {
+            for (int i = 0; i < maxEnemiesBySpawn; i++)
+            {
+                RandomizeSpawn();
+
+                SpawnLavaguy();
+
+                if (WaveNumber >= 3)
+                {
+                    SpawnFlameGuy();
+                }
+                timer = Time.time + delay;
             }
+
+        }
         return;
-      //  }
+    }
+
+    private void SpawnFlameGuy()
+    {
+        flameejaPrefab1 = Instantiate(flameejaPrefab, new Vector3(randX + 2, randY + 2, randZ + 2), transform.rotation) as GameObject;
+        NumberOfEnemies = NumberOfEnemies - 1;
+    }
+
+    private void SpawnLavaguy()
+    {
+        enemyPrefab1 = Instantiate(enemyPrefab, new Vector3(randX, randY, randZ), transform.rotation) as GameObject;
+        NumberOfEnemies = NumberOfEnemies - 1;
+    }
+
+    private void RandomizeSpawn()
+    {
+        randX = UnityEngine.Random.Range(30.0f, 40.0f);
+        randY = UnityEngine.Random.Range(1.0f, 2.0f);
+        randZ = UnityEngine.Random.Range(-5.0f, 8.0f);
     }
 }

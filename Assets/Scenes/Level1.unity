@@ -1119,7 +1119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603483683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.75, y: 1.16, z: 8.56}
+  m_LocalPosition: {x: -36.01, y: 1.16, z: -1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1651,6 +1651,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2391912038970272455, guid: d4d213b66dc367e489973b26cc420949,
         type: 3}
+    - target: {fileID: 7892476564854293357, guid: a6fb351c7073ee343a323491822f5cbf,
+        type: 3}
+      propertyPath: maxEnemiesBySpawn
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7892476565496889969, guid: a6fb351c7073ee343a323491822f5cbf,
         type: 3}
       propertyPath: m_LocalPosition.z
