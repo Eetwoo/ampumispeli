@@ -1,13 +1,13 @@
+using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
 
 public class PowerUp : MonoBehaviour
 {
     public GameObject pickupEffect;
 
-    public StructureScript linnahealth;
 
     void OnTriggerEnter(Collider other)
     {
@@ -22,17 +22,18 @@ public class PowerUp : MonoBehaviour
         Instantiate(pickupEffect, transform.position, transform.rotation);
         if (gameObject.tag == "healthPowerUp")
         {
-            //TODO linnaan healthia
+            GameObject g = GameObject.Find("linna");
+            StructureScript st = g.GetComponent<StructureScript>();
+            st.TakeDamage(-100);
+
             PlayerHealth playeri = player.GetComponent<PlayerHealth>();
             playeri.TakeDamage(-100);
         }
         else if (gameObject.tag == "speedPowerUp")
         {
             PlayerMovement stats = player.GetComponent<PlayerMovement>();
-            stats.speed *= 2;
+            stats.speed += 6;
         }
         Destroy(gameObject);
     }
-
-
 }
