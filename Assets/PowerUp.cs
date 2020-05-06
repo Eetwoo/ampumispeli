@@ -7,6 +7,7 @@ public class PowerUp : MonoBehaviour
 {
     public GameObject pickupEffect;
 
+    public StructureScript linnahealth;
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,10 +22,7 @@ public class PowerUp : MonoBehaviour
         Instantiate(pickupEffect, transform.position, transform.rotation);
         if (gameObject.tag == "healthPowerUp")
         {
-            GameObject g = GameObject.Find("linna");
-            StructureScript st = g.GetComponent<StructureScript>();
-            st.TakeDamage(-100);
-
+            //TODO linnaan healthia
             PlayerHealth playeri = player.GetComponent<PlayerHealth>();
             playeri.TakeDamage(-100);
         }

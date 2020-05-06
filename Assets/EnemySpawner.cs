@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
         WaveText.GetComponent<Text>().text = "Wave: " + WaveNumber.ToString();
         timer = Time.time + delay;
         timer2 = Time.time + delay + delay;
-        timer3 = Time.time + delay + delay + delay;
+        timer3 = Time.time + delay + delay + delay ;
     }
 
     // Update is called once per frame
