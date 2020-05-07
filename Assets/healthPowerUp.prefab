@@ -13,6 +13,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 60, y: 60, z: 60}
   m_Center: {x: -6.3, y: 35, z: -25.67}
+--- !u!23 &655864343564378968
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577669064965119453}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!114 &6217427533802639569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,8 +65,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 1414200116521900077, guid: 1af0709394363e049a20fe08aeb564ad,
-    type: 3}
-  linnahealth: {fileID: 721056895991426811, guid: 309cc470acdfa444f90c9589b8be72c8,
     type: 3}
 --- !u!1001 &8873683231400330452
 PrefabInstance:
@@ -120,7 +157,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0a98c4c9099ed27408a5ff01d0bc5d44, type: 2}
+      objectReference: {fileID: 2100000, guid: e9d75039a1ab45e4ab4dd9ae8430862b, type: 2}
     - target: {fileID: 7801655267501062854, guid: 69474d16c3c08a14598484d5aa3ad663,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
